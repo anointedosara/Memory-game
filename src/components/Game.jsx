@@ -17,7 +17,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
   };
 
   return (
-    <div className="max-w-250 w-full relative ">
+    <div className="max-w-250 w-full relative transition-all">
       <ResultsModal />
       
       {isMenuOpen && (
@@ -25,19 +25,19 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
           <div className="bg-white rounded-xl w-full max-w-sm p-6 flex flex-col gap-4">
             <button 
               onClick={handleRestart}
-              className="w-full bg-[#FDA214] text-white font-bold py-4 rounded-full text-lg hover:bg-[#FFB84A]"
+              className="w-full cursor-pointer bg-[#FDA214] text-white font-bold py-4 rounded-full text-lg hover:bg-[#FFB84A]"
             >
               Restart
             </button>
             <button 
               onClick={startNewGame}
-              className="w-full bg-[#DFE7EC] text-[#304859] font-bold py-4 rounded-full text-lg hover:bg-[#6395B8] hover:text-white"
+              className="w-full cursor-pointer bg-[#DFE7EC] text-[#304859] font-bold py-4 rounded-full text-lg hover:bg-[#6395B8] hover:text-white"
             >
               New Game
             </button>
             <button 
               onClick={() => setIsMenuOpen(false)}
-              className="w-full bg-[#DFE7EC] text-[#304859] font-bold py-4 rounded-full text-lg hover:bg-[#6395B8] hover:text-white"
+              className="w-full cursor-pointer bg-[#DFE7EC] text-[#304859] font-bold py-4 rounded-full text-lg hover:bg-[#6395B8] hover:text-white"
             >
               Resume Game
             </button>
@@ -48,12 +48,12 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
       <div className="flex justify-between mb-15 md:mb-20">
         <h2 className="text-2xl font-bold">memory</h2>
         <div className="hidden md:flex gap-5">
-          <button onClick={setupGame} className="bg-[#FDA214] hover:bg-[#FFB84A] font-bold px-5 py-2 rounded-full text-white">Restart</button>
-          <button onClick={startNewGame} className="bg-[#DFE7EC] hover:bg-[#6395B8] hover:text-white font-bold px-5 py-2 rounded-full">New Game</button>
+          <button onClick={setupGame} className="bg-[#FDA214] cursor-pointer hover:bg-[#FFB84A] font-bold px-5 py-2 rounded-full text-white">Restart</button>
+          <button onClick={startNewGame} className="bg-[#DFE7EC] cursor-pointer hover:bg-[#6395B8] hover:text-white font-bold px-5 py-2 rounded-full">New Game</button>
         </div>
         <button 
           onClick={() => setIsMenuOpen(true)}
-          className="md:hidden bg-[#FDA214] hover:bg-[#FFB84A] text-white font-bold px-6 py-3 rounded-full"
+          className="md:hidden cursor-pointer bg-[#FDA214] hover:bg-[#FFB84A] text-white font-bold px-6 py-3 rounded-full"
         >
           Menu
         </button>
@@ -64,7 +64,7 @@ const [isMenuOpen, setIsMenuOpen] = useState(false);
           const show = flippedCards.includes(i) || matchedCards.includes(i);
           return (
             <div  key={i} className="flex w-full items-center justify-center">
-                <button onClick={() => handleCardClick(i)} disabled={matchedCards.includes(i)} className={`w-15 md:w-20 h-15 md:h-20 rounded-full flex items-center justify-center transition-all ${show ? "bg-[#FDA214]" : "bg-[#152938]"} disabled:bg-[#BCCED9]`}>
+                <button onClick={() => handleCardClick(i)} disabled={matchedCards.includes(i)} className={`w-15 cursor-pointer md:w-20 h-15 md:h-20 rounded-full flex items-center justify-center transition-all ${show ? "bg-[#FDA214]" : "bg-[#152938] hover:bg-[#6395B8]"} disabled:bg-[#BCCED9]`}>
               {show && (theme === "Numbers" ? <span className="text-white text-[30px] font-bold">{val}</span> : <Image src={val} alt="" width={30} height={38} />)}
             </button>
             </div>

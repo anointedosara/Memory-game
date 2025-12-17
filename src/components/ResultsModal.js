@@ -29,8 +29,8 @@ export default function ResultsModal() {
           )}
         </div>
         <div className="flex flex-col md:flex-row w-full justify-between items-center gap-3">
-          <button onClick={setupGame} className="bg-[#FDA214] w-full text-white py-3 rounded-full font-bold text-xl">Restart</button>
-          <button onClick={() => { sessionStorage.removeItem("memory_game_storage"); window.location.href = "/"; }} className="bg-[#DFE7EC] w-full text-[#304859] py-3 rounded-full font-bold text-xl">Setup New Game</button>
+          <button onClick={setupGame} className="bg-[#FDA214] cursor-pointer w-full text-white py-3 rounded-full font-bold text-xl">Restart</button>
+          <button onClick={() => { sessionStorage.removeItem("memory_game_storage"); window.location.href = "/"; }} className="bg-[#DFE7EC] cursor-pointer w-full text-[#304859] py-3 rounded-full font-bold text-xl">Setup New Game</button>
         </div>
       </div>
     </div>

@@ -148,7 +148,7 @@ export function GameProvider({ children }) {
   useEffect(() => {
     if (cards.length > 0 && matchedCards.length === cards.length) {
       setIsRunning(false);
-      setTimeout(() => setIsGameOver(true), 500);
+      setTimeout(() => setIsGameOver(true), 1000);
     }
   }, [matchedCards, cards]);
 
